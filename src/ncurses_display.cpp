@@ -3,6 +3,7 @@
 #include <string>
 #include <thread>
 #include <vector>
+#include <iostream>
 
 #include "format.h"
 #include "ncurses_display.h"
@@ -99,7 +100,7 @@ void NCursesDisplay::Display(System& system, int n) {
     box(system_window, 0, 0);
     box(process_window, 0, 0);
     DisplaySystem(system, system_window);
-    DisplayProcesses(system.Processes(), process_window, n);
+    DisplayProcesses(system.Processes(), process_window, n);  
     wrefresh(system_window);
     wrefresh(process_window);
     refresh();
